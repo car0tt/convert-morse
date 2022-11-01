@@ -1,8 +1,10 @@
 import translator
+import sound
 
 print(
     'If you want convert text to morse code, type: Text to Morse(TtM)\n'
     'If you want convert Morse code to text, type: Morse to Text(MtT)\n'
+    'If you want audio morse code, type: Morse to Audio(MtA)\n'
     'Enter /Q to quit'
 )
 
@@ -18,6 +20,11 @@ while True:
         if minput == '/Q':
             quit(0)
         translator.MtT(minput)
+    elif choice == 'MtA' or choice == 'Morse to Audio':
+        minput = input('Put the Morse code you want to convert to audio: ')
+        if minput == '/Q':
+            quit(0)
+        sound.sound_morse(minput)
     elif choice == '/Q':
         quit(0)
     else:
